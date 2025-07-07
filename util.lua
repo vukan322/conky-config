@@ -1,3 +1,9 @@
+if _G.conky_parse == nil then
+	_G.conky_parse = function(s)
+		return s
+	end
+end
+
 _G.conky_days_until = function(target_day)
 	target_day = tonumber(target_day)
 	if not target_day then
@@ -25,4 +31,14 @@ _G.conky_days_until = function(target_day)
 	local days = math.ceil(seconds_remaining / 86400)
 
 	return days
+end
+
+_G.conky_get_formatted_ram = function()
+	local ram_string = conky_parse("${mem} / ${memmax}")
+	return string.gsub(ram_string, "GiB", "GB")
+end
+
+_G.conky_get_formatted_storage = function()
+	local storage_string = conky_parse("${fs_used /} / ${fs_size /}")
+	return string.gsub(storage_string, "GiB", "GB")
 end
