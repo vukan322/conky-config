@@ -1,6 +1,8 @@
 # Custom Conky for a Vertical Side Monitor
 
-This is a personal Conky setup designed specifically for a vertical monitor used as a secondary display. The layout is optimized to place important, at-a-glance information in the primary viewing area, leaving the top of the tall screen free.
+This is a personal Conky setup designed specifically for a vertical monitor used as a secondary display. The layout is optimized to place important, at-a-glance information in the primary viewing area.
+
+This configuration uses Lua scripting to provide advanced features and a clean, portable setup without external shell scripts.
 
 ## Preview
 
@@ -14,16 +16,17 @@ This is a personal Conky setup designed specifically for a vertical monitor used
 
 * Large, centered clock with the current date.
 * Two-column layout that separates custom information from system stats.
-* A helper script that provides a financial countdown for recurring bills/rent dates.
+* Lua helper scripts for financial countdowns (rent, bills, new month).
+* Live list of the Top 5 Processes by CPU and RAM usage, with a separate 3-second update interval.
 * Detailed system monitoring (CPU, RAM, Storage).
-* Dedicated NVIDIA GPU monitoring section.
+* Dedicated NVIDIA GPU monitoring section with usage, temperature, VRAM, power draw, and clock speed
+* Portable configuration that uses the $HOME variable, requiring no hardcoded user paths.
 
 ## Dependencies
 
 * **Conky**: `v1.10` or newer.
 * **NVIDIA Drivers**: The `nvidia-smi` command must be installed and available in your system's PATH.
 * **Fonts**: `DejaVu Sans Mono` is used by default, but can be easily changed in `conky.conf`.
-* **Shell**: Requires `bash` and GNU `date`.
 
 ## Installation & Usage
 
@@ -51,14 +54,7 @@ Now, move into the newly created directory:
 cd conky-config
 ```
 
-#### 4. Make the Helper Script Executable
-
-Before running, you must give the date calculation script permission to execute.
-```bash
-chmod +x conky_days.sh
-```
-
-#### 5. Run Conky
+#### 4. Run Conky
 
 To run the configuration, point Conky to the conky.conf file using the -c flag.
 ```bash
