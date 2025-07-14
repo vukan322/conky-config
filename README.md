@@ -1,4 +1,7 @@
 # Custom Conky for a Vertical Side Monitor
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Built with Conky](https://img.shields.io/badge/Built_with-Conky-blue?logo=conky&logoColor=white)](https://github.com/brndnmtthws/conky)
+[![Distro: Ubuntu](https://img.shields.io/badge/Distro-Ubuntu-blue?logo=ubuntu&logoColor=white)](https://ubuntu.com/)
 
 This is a personal Conky setup designed specifically for a vertical monitor used as a secondary display. The layout is optimized to place important, at-a-glance information in the primary viewing area.
 
@@ -61,3 +64,6 @@ To run the configuration, point Conky to the conky.conf file using the -c flag.
 conky -c conky.conf
 ```
 
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
